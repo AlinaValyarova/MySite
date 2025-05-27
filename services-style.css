@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+    font-family: Georgia, sans-serif;
+    color: #786855;
+    background-color: #fff;
+}
+
+.top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5ba377;
+    margin-right: auto;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    margin-left: auto; 
+}
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #666;
+    font-size: 14px;
+}
+
+.section-title {
+    text-align: left;
+    color: #5ba377;
+    margin: 40px;
+    font-size: 22px;
+}
+
+.section-description {
+    text-align: left;
+    max-width: 2500px;
+    margin: 20px 40px 40px;
+    font-size: 20px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2,500px);
+    gap: 30px;
+    padding: 0 40px 60px;
+}
+
+.service-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 6px;
+}
+
+.service-card .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.service-card h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.service-card p {
+    font-size: 20px;
+    font-weight: lighter;
+    margin-bottom: 15px;
+}
+
+.service-card button {
+    padding: 30px 255px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    font-weight: lighter;
+    transition: 0.3s;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.service-card button:hover {
+    background-color: white;
+    color: #444;
+}
+
+
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: 1fr 1fr; /* всё ещё 2 колонки, но можно уменьшить отступы */
+        grid-template-rows: auto;
+        padding: 0 20px 40px;
+        gap: 20px;
+    }
+
+    .service-card {
+        height: 400px;
+    }
+
+    .service-card p {
+        font-size: 18px;
+    }
+
+    .service-card button {
+        padding: 15px 80px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
+    }
+
+    .service-card {
+        height: 350px;
+    }
+
+    .service-card p {
+        font-size: 16px;
+    }
+
+    .service-card button {
+        padding: 12px 60px;
+        font-size: 16px;
+    }
+
+    .section-title, .section-description {
+        margin: 20px;
+        font-size: 18px;
+    }
+}
