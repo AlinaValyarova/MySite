@@ -3,6 +3,7 @@ body {
     font-family: Georgia, sans-serif;
     color: #786855;
     background-color: #fff;
+    overflow-x: hidden; /* Продолжаем держать это, пока не найдем точную причину */
 }
 
 .top-header {
@@ -24,7 +25,7 @@ body {
 
 nav {
     display: flex;
-    margin-left: auto; 
+    margin-left: auto;
 }
 nav a {
     margin-left: 20px;
@@ -50,7 +51,7 @@ nav a {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2,500px);
+    grid-template-rows: repeat(2, 500px); /* Можно изменить на auto, если высота карточек динамическая */
     gap: 30px;
     padding: 0 40px 60px;
 }
@@ -62,9 +63,11 @@ nav a {
     height: 500px;
     color: white;
     display: flex;
-    align-items: flex-end;
-    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden; /* Убедимся, что контент внутри карточки не вылезает */
     border-radius: 6px;
+    box-sizing: border-box;
 }
 
 .service-card .overlay {
@@ -84,17 +87,24 @@ nav a {
     font-size: 20px;
     font-weight: lighter;
     margin-bottom: 15px;
+    /* Добавлено: Помогает очень длинным словам переноситься */
+    word-break: break-word; /* Для длинных слов без пробелов */
+    overflow-wrap: break-word; /* Современный вариант word-break */
 }
 
 .service-card button {
-    padding: 30px 255px;
+    width: 100%;
+    /* Более адаптивный padding: только вертикальный */
+    padding: 15px 0;
     background-color: transparent;
     border: 1px solid white;
     color: white;
     font-weight: lighter;
     transition: 0.3s;
     font-size: 20px;
-    white-space: nowrap;
+    box-sizing: border-box;
+    /* Убедимся, что текст в кнопке центрирован */
+    text-align: center;
 }
 
 .service-card button:hover {
@@ -102,10 +112,12 @@ nav a {
     color: #444;
 }
 
+/* --- Медиа-запросы для мобильных устройств --- */
 
+/* Планшеты и широкие мобильные (до 1024px) */
 @media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: 1fr 1fr; /* всё ещё 2 колонки, но можно уменьшить отступы */
+        grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         padding: 0 20px 40px;
         gap: 20px;
@@ -120,14 +132,32 @@ nav a {
     }
 
     .service-card button {
-        padding: 15px 80px;
+        padding: 12px 0;
         font-size: 18px;
     }
 }
 
+/* Мобильные телефоны (до 768px) */
 @media (max-width: 768px) {
+    .top-header {
+        padding: 15px 15px; /* Уменьшаем горизонтальный padding */
+    }
+    .logo {
+        font-size: 24px;
+    }
+    /* Если у вас есть мобильное меню, убедитесь, что оно корректно работает здесь */
+    /* top-header nav { display: none; } и mobileMenu { display: block; } */
+
+
+    .section-title, .section-description {
+        margin: 20px 15px; /* Уменьшаем горизонтальные margin */
+        font-size: 18px;
+    }
+
     .services-grid {
-        grid-template-columns: 1fr; /* 1 колонка */
+        grid-template-columns: 1fr; /* 1 колонка на мобильных */
+        padding: 0 15px 30px; /* Уменьшаем горизонтальный padding */
+        gap: 20px; /* Уменьшаем зазор между карточками */
     }
 
     .service-card {
@@ -139,12 +169,52 @@ nav a {
     }
 
     .service-card button {
-        padding: 12px 60px;
+        padding: 10px 0; /* Еще больше уменьшаем padding */
         font-size: 16px;
+    }
+}
+
+/* Очень маленькие мобильные устройства (до 480px, например, iPhone SE) */
+@media (max-width: 480px) {
+    .top-header {
+        padding: 10px 10px; /* Еще более агрессивное уменьшение padding */
+    }
+    .logo {
+        font-size: 22px;
+    }
+    nav a { /* Для десктопной навигации, если она вдруг показывается */
+        margin-left: 10px;
+        font-size: 12px;
     }
 
     .section-title, .section-description {
-        margin: 20px;
+        margin: 15px 10px; /* Еще уменьшаем горизонтальные margin */
+        font-size: 16px;
+    }
+
+    .services-grid {
+        padding: 0 10px 20px; /* Еще уменьшаем горизонтальный padding */
+        gap: 15px;
+    }
+
+    .service-card {
+        height: 300px; /* Возможно, еще меньше для очень маленьких экранов */
+    }
+
+    .service-card .overlay {
+        padding: 15px; /* Уменьшаем padding внутри оверлея */
+    }
+
+    .service-card h3 {
         font-size: 18px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+    }
+
+    .service-card button {
+        padding: 8px 0; /* Минимальный padding */
+        font-size: 14px;
     }
 }

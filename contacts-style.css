@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    font-family: Georgia, sans-serif;
+    background-color: #fff;
+    color: #786855;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5ba377;
+}
+
+nav a {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #5ba377;
+}
+
+/* Styles for the Contact Page Background and Overlay */
+.contact-hero {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    background-image: url("pictures/contacts-back.jpg"); /* ИСПРАВЛЕННЫЙ ПУТЬ */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+    color: #fff; /* White text on top of the image */
+    text-align: center;
+}
+
+/* Overlay for the background image */
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Темный оверлей, регулируйте прозрачность */
+    z-index: 1; /* Поверх фонового изображения, но под текстом */
+}
+
+/* Content wrapper to ensure text is above the overlay */
+.contact-content {
+    position: relative;
+    z-index: 2; /* Поверх оверлея */
+    padding: 20px;
+}
+
+.contact-content h2 {
+    font-family: 'Brush Script MT', cursive; /* Пример для "Contacts", ищите похожий шрифт или используйте Google Fonts */
+    font-size: 5em; /* Очень крупный размер */
+    color: #fff; /* Белый цвет текста */
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+.contact-content p {
+    font-family: Georgia, sans-serif; /* Ваш основной шрифт */
+    font-size: 1.5em; /* Размер для "Working hours", "Mail" и т.д. */
+    color: #fff; /* Белый цвет текста */
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.contact-content a {
+    color: #fff; /* Белый цвет ссылки */
+    text-decoration: underline;
+}
+
+.contact-content a:hover {
+    color: #eee; /* Более светлый при наведении */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) { /* Добавил этот медиа-запрос, который пропустили в вашем коде */
+    .contact-hero {
+        height: 450px;
+    }
+    .contact-content h2 {
+        font-size: 3.5em;
+    }
+    .contact-content p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-hero {
+        height: 400px;
+    }
+    .contact-content h2 {
+        font-size: 2.8em;
+    }
+    .contact-content p {
+        font-size: 1em;
+    }
+}

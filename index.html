@@ -1,66 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="pictures\logo.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Homepage | V&Co.</title>
-    <link rel="stylesheet" href="index-style.css">
+    <link rel="icon" href="pictures/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index-style.css" />
 </head>
-<body>
-    <div class="top-header">
-        <a class="logo" href="homepage.html">Verde & Co.</a>
-        <nav>
-            <a href="services.html">Services</a>
-            <a href="#">Portfolio</a>
-            <a href="#">Contact</a>
-            <a href="#">Reviews</a>
-        </nav>
+<body style="background-color: #fff; color: #786855; font-family: Georgia, sans-serif;">
+
+<header class="py-3 shadow-sm">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-between align-items-center">
+      <a class="logo text-decoration-none" href="index.html">Verde & Co.</a>
+      
+      <!-- Кнопка гамбургер для мобильных -->
+<button class="navbar-toggler d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-expanded="false" aria-label="Toggle navigation">
+  <i class="bi bi-list fs-1" style="color: #5ba377;"></i>
+</button>
+
+      <!-- Десктоп меню -->
+      <nav class="d-none d-md-flex gap-4">
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contacts.html">Contact</a>
+        <a href="reviews.html">Reviews</a>
+      </nav>
     </div>
 
-    <section class="gallery">
-        <img src="pictures\img1.jpg" alt="Decor item 1">
-        <img src="pictures\img2.jpg" alt="Decor item 2">
-        <img src="pictures\img3.jpg" alt="Decor item 3">
-        <img src="pictures\img4.jpg" alt="Decor item 4">
-        <img src="pictures\img5.jpg" alt="Decor item 5">
-    </section>
+    <!-- Мобильное меню, скрыто по умолчанию -->
+    <div class="collapse d-md-none mt-3" id="mobileMenu">
+      <nav class="d-flex flex-column gap-3">
+        <a href="services.html" class="text-decoration-none" style="color: #666;">Services</a>
+        <a href="#" class="text-decoration-none" style="color: #666;">Portfolio</a>
+        <a href="#" class="text-decoration-none" style="color: #666;">Contact</a>
+        <a href="#" class="text-decoration-none" style="color: #666;">Reviews</a>
+      </nav>
+    </div>
+  </div>
+</header>
 
-    <div class="order-button">
-        <button>ORDER NOW</button>
+    <!-- Gallery -->
+<section class="py-4 container-fluid"> <div id="gallerySlider" class="d-flex gap-3 overflow-auto px-3">
+        <img src="pictures/img1.jpg" alt="Decor item 1" class="img-fluid rounded" />
+        <img src="pictures/img2.jpg" alt="Decor item 2" class="img-fluid rounded" />
+        <img src="pictures/img3.jpg" alt="Decor item 3" class="img-fluid rounded" />
+        <img src="pictures/img4.jpg" alt="Decor item 4" class="img-fluid rounded" />
+        <img src="pictures/img5.jpg" alt="Decor item 5" class="img-fluid rounded" />
+    </div>
+</section>
+
+    <!-- Order Button -->
+    <div class="container text-center my-4">
+        <button class="btn btn-outline-success px-5 py-3 fs-4">ORDER NOW</button>
     </div>
 
-    <section class="info-section">
-        <div class="info-picture">
-            <img src="pictures\img6.jpg" alt="disco vase">
-        </div>
-        <div class="info-box">
-            <p>
-                Verde & Co. is a home decor brand that brings the beauty of nature into your living space. 
-                Specializing in artisan-crafted, eco-friendly, and timeless decorative pieces, 
-                we blend modern aesthetics with organic materials to create interiors that feel both sophisticated and inviting.
-                Our mission is to transform everyday living environments into serene,
-                nature-inspired sanctuaries. Every item in our collection is thoughtfully designed and responsibly sourced, 
-                ensuring both style and sustainability. From handcrafted ceramics and natural fiber textiles to wood and stone accents, 
-                each piece tells a story of craftsmanship and care.
-                We believe that a well-designed home should reflect not only personal taste, 
-                but also respect for the environment. That’s why we collaborate with local artisans and focus on materials 
-                that are renewable, biodegradable, or upcycled. Whether you're redesigning an entire room or simply adding a 
-                meaningful accent, Verde & Co. helps you create spaces that are warm, balanced, and full of life. 
-                That’s why we collaborate with local artisans and focus on materials 
-                that are renewable, biodegradable, or upcycled. Whether you're redesigning an entire room or simply adding a 
-                meaningful accent, Verde & Co. helps you create spaces that are warm, balanced, and full of life. 
-            </p>
-        </div>
-        <div class="info-box">
-            <img src="pictures\img7.jpg" alt="Flower pots">
-            <p>
-                Verde & Co. brings nature-inspired elegance into your home with sustainable, handcrafted decor.
-                Our eco-friendly designs blend timeless aesthetics with artisanal quality, creating unique pieces that
-                elevate any space. Personalization options ensure every detail reflects your vision, making your home truly one of a kind.
-            </p>
+    <!-- Info Section -->
+    <section class="container py-5">
+        <div class="row g-4 align-items-start">
+            <div class="col-md-4 text-center">
+                <img src="pictures/img6.jpg" alt="disco vase" class="img-fluid rounded" />
+            </div>
+            <div class="col-md-4">
+                <p>
+                    Verde & Co. is a home decor brand that brings the beauty of nature into your living space. Specializing in artisan-crafted,
+                    eco-friendly, and timeless decorative pieces, we blend modern aesthetics with organic materials to create interiors that feel
+                    both sophisticated and inviting...Verde & Co. is a home decor brand that brings the beauty of nature into your living space. Specializing in artisan-crafted,
+                    eco-friendly, and timeless decorative pieces, we blend modern aesthetics with organic materials to create interiors that feel
+                    both sophisticated and inviting...Verde & Co. is a home decor brand that brings the beauty of nature into your living space. Specializing in artisan-crafted,
+                    eco-friendly, and timeless decorative pieces, we blend modern aesthetics with organic materials to create interiors that feel
+                    both sophisticated and inviting...Verde & Co. is a home decor brand that brings the beauty of nature into your living space. Specializing in artisan-crafted,
+                    eco-friendly, and timeless decorative pieces, we blend modern aesthetics with organic materials to create interiors that feel
+                    both sophisticated and inviting...
+                </p>
+            </div>
+            <div class="col-md-4 border-start ps-3">
+                <img src="pictures/img7.jpg" alt="Flower pots" class="img-fluid rounded mb-3" />
+                <p>
+                    Verde & Co. brings nature-inspired elegance into your home with sustainable, handcrafted decor. Our eco-friendly designs blend timeless
+                    aesthetics with artisanal quality...Verde & Co. is a home decor brand that brings the beauty of nature into your living space. Specializing in artisan-crafted,
+                    eco-friendly, and timeless decorative pieces, we blend modern aesthetics with organic materials to create interiors that feel
+                    both sophisticated and inviting...Verde & Co. is a home decor brand that brings the beauty of nature into your living space. Specializing in artisan-crafted,
+                    eco-friendly, and timeless decorative pieces, we blend modern aesthetics with organic materials to create interiors that feel
+                    both sophisticated and inviting...
+                </p>
+            </div>
         </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="text-center py-4 fs-4 text-success">
         Verde & Co. – Bringing the Serenity of Nature Indoors.
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const slider = document.getElementById('gallerySlider');
+  const btnLeft = document.getElementById('slideLeft');
+  const btnRight = document.getElementById('slideRight');
+  const scrollAmount = 220; // на сколько px сдвигаем за клик (примерно ширина + gap)
+
+  btnLeft.addEventListener('click', () => {
+    slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

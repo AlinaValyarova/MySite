@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: Georgia, sans-serif;
+    background-color: #fff;
+    color: #786855;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #5ba377;
+}
+
+nav a {
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #5ba377;
+}
+
+.reviews-page-content {
+    background-color: #fff; /* Убедимся, что фон белый для этой страницы */
+}
+
+.reviews-heading {
+    text-align: center;
+    font-size: 2.5em; /* Достаточно большой заголовок */
+    margin-bottom: 20px;
+    color: #5ba377; /* Цвет, как на скриншоте */
+}
+
+.reviews-description {
+    text-align: center;
+    max-width: 800px; /* Ограничим ширину для лучшей читаемости */
+    margin: 0 auto 50px auto; /* Центрируем и добавляем отступ снизу */
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #786855;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Три колонки */
+    gap: 30px; /* Отступ между карточками */
+    padding: 0 15px; /* Небольшой горизонтальный отступ */
+    margin-bottom: 50px; /* Отступ до кнопки */
+}
+
+.review-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое по горизонтали */
+    text-align: center;
+    min-height: 450px; /* Минимальная высота для выравнивания карточек, можно скорректировать */
+}
+
+.review-card .review-text {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #786855;
+    flex-grow: 1; /* Позволяет тексту занимать доступное пространство */
+    display: flex;
+    align-items: center; /* Центрируем текст по вертикали внутри отведенного места */
+    justify-content: center;
+}
+
+.review-card .review-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 270px; /* ИЗМЕНЕНО: Увеличена высота для более "длинных" картинок */
+    margin-top: 15px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.review-card .review-image {
+    width: 100%; /* Изображение заполняет всю ширину контейнера */
+    height: 100%; /* Изображение заполняет всю высоту контейнера */
+    object-fit: cover; /* Обрезает изображение, чтобы оно заполняло контейнер, сохраняя пропорции */
+    display: block; /* Убирает лишние отступы под изображением */
+}
+
+/* Order Now Button Section */
+.order-section {
+    padding-bottom: 80px; /* Отступ снизу */
+}
+
+.order-now-button {
+    padding: 20px 80px; /* Увеличим отступы для кнопки */
+    border: 1px solid #786855;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #786855;
+    text-transform: uppercase; /* Текст в верхнем регистре */
+    font-weight: bold;
+}
+
+.order-now-button:hover {
+    background-color: #659D77;
+    color: white;
+    border-color: #659D77;
+}
+
+
+/* Мобильные телефоны (до 768px) */
+@media (max-width: 768px) {
+    .reviews-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
+        padding: 0 20px; /* Увеличиваем отступы по бокам */
+    }
+    .reviews-description {
+        margin: 0 auto 30px auto;
+        padding: 0 15px;
+    }
+    .reviews-heading {
+        font-size: 2em;
+    }
+    .review-card {
+        min-height: auto; /* Высота авто, чтобы содержимое определяло ее */
+        padding: 15px;
+    }
+    .review-card .review-image-wrapper {
+        height: 180px;
+    }
+    .review-card .review-text {
+        font-size: 1em;
+    }
+    .order-now-button {
+        padding: 15px 60px;
+        font-size: 18px;
+    }
+}
