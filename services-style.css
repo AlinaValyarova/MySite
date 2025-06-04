@@ -3,55 +3,65 @@ body {
     font-family: Georgia, sans-serif;
     color: #786855;
     background-color: #fff;
-    overflow-x: hidden; /* Продолжаем держать это, пока не найдем точную причину */
+    overflow-x: hidden;
 }
 
-.top-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 40px;
-    background-color: #fff;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+/* Header styles from Reviews page */
+header {
+    background-color: #fff; /* Ensure header background is white */
+    padding: 1rem 0; /* Bootstrap py-3 gives padding */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Match the shadow */
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
     color: #5ba377;
-    margin-right: auto;
     text-decoration: none;
 }
 
-nav {
-    display: flex;
-    margin-left: auto;
-}
 nav a {
-    margin-left: 20px;
-    text-decoration: none;
     color: #666;
     font-size: 14px;
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+    color: #5ba377; /* Hover color */
+}
+
+/* Specific styling for the mobile menu links if needed */
+#mobileMenu a {
+    padding: 0.5rem 0; /* Add some padding for better touch targets */
+}
+
+
+/* Main content styling (from your original code) */
+main {
+    padding: 40px 20px; /* Example padding for main content */
+    max-width: 1200px; /* Max width to center content */
+    margin: 0 auto; /* Center the main content */
 }
 
 .section-title {
-    text-align: left;
+    text-align: left; /* From your original CSS */
     color: #5ba377;
-    margin: 40px;
-    font-size: 22px;
+    margin: 40px; /* From your original CSS */
+    font-size: 22px; /* From your original CSS */
 }
 
 .section-description {
-    text-align: left;
-    max-width: 2500px;
-    margin: 20px 40px 40px;
-    font-size: 20px;
+    text-align: left; /* From your original CSS */
+    max-width: 2500px; /* From your original CSS */
+    margin: 20px 40px 40px; /* From your original CSS */
+    font-size: 20px; /* From your original CSS */
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 500px); /* Можно изменить на auto, если высота карточек динамическая */
+    grid-template-rows: repeat(2, 500px);
     gap: 30px;
     padding: 0 40px 60px;
 }
@@ -65,9 +75,10 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    overflow: hidden; /* Убедимся, что контент внутри карточки не вылезает */
+    overflow: hidden;
     border-radius: 6px;
     box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow for consistency */
 }
 
 .service-card .overlay {
@@ -87,14 +98,12 @@ nav a {
     font-size: 20px;
     font-weight: lighter;
     margin-bottom: 15px;
-    /* Добавлено: Помогает очень длинным словам переноситься */
-    word-break: break-word; /* Для длинных слов без пробелов */
-    overflow-wrap: break-word; /* Современный вариант word-break */
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .service-card button {
     width: 100%;
-    /* Более адаптивный padding: только вертикальный */
     padding: 15px 0;
     background-color: transparent;
     border: 1px solid white;
@@ -103,7 +112,6 @@ nav a {
     transition: 0.3s;
     font-size: 20px;
     box-sizing: border-box;
-    /* Убедимся, что текст в кнопке центрирован */
     text-align: center;
 }
 
@@ -112,109 +120,122 @@ nav a {
     color: #444;
 }
 
+/* Footer styles (added for completeness) */
+footer {
+    background-color: #fff;
+    color: #5ba377;
+}
+
 /* --- Медиа-запросы для мобильных устройств --- */
 
-/* Планшеты и широкие мобильные (до 1024px) */
-@media (max-width: 1024px) {
+/* Скрываем десктопную навигацию и показываем гамбургер на маленьких экранах */
+@media (max-width: 767.98px) {
+    .d-md-none {
+        display: block !important; /* Makes the hamburger button visible */
+    }
+    .d-md-flex {
+        display: none !important; /* Hides the desktop navigation */
+    }
+
+    .top-header { /* Revert to specific Bootstrap classes for header padding */
+        padding: 1rem 0; /* py-3 */
+    }
+    .container-fluid {
+        padding-right: 1.5rem; /* px-3 */
+        padding-left: 1.5rem;  /* px-3 */
+    }
+    .logo {
+        font-size: 24px;
+    }
+    .section-title, .section-description {
+        margin: 20px 15px;
+        font-size: 18px;
+    }
+    .services-grid {
+        grid-template-columns: 1fr;
+        padding: 0 15px 30px;
+        gap: 20px;
+    }
+    .service-card {
+        height: 350px;
+    }
+    .service-card p {
+        font-size: 16px;
+    }
+    .service-card button {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+}
+
+/* Планшеты и широкие мобильные (от 768px до 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .d-md-none {
+        display: none !important;
+    }
+    .d-md-flex {
+        display: flex !important;
+    }
+
     .services-grid {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: auto;
         padding: 0 20px 40px;
         gap: 20px;
     }
-
     .service-card {
         height: 400px;
     }
-
     .service-card p {
         font-size: 18px;
     }
-
     .service-card button {
         padding: 12px 0;
         font-size: 18px;
     }
 }
 
-/* Мобильные телефоны (до 768px) */
-@media (max-width: 768px) {
-    .top-header {
-        padding: 15px 15px; /* Уменьшаем горизонтальный padding */
+/* Десктоп (больше 1024px) */
+@media (min-width: 1025px) {
+    .d-md-none {
+        display: none !important; /* Убедимся, что кнопка гамбургера скрыта */
     }
-    .logo {
-        font-size: 24px;
-    }
-    /* Если у вас есть мобильное меню, убедитесь, что оно корректно работает здесь */
-    /* top-header nav { display: none; } и mobileMenu { display: block; } */
-
-
-    .section-title, .section-description {
-        margin: 20px 15px; /* Уменьшаем горизонтальные margin */
-        font-size: 18px;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr; /* 1 колонка на мобильных */
-        padding: 0 15px 30px; /* Уменьшаем горизонтальный padding */
-        gap: 20px; /* Уменьшаем зазор между карточками */
-    }
-
-    .service-card {
-        height: 350px;
-    }
-
-    .service-card p {
-        font-size: 16px;
-    }
-
-    .service-card button {
-        padding: 10px 0; /* Еще больше уменьшаем padding */
-        font-size: 16px;
+    .d-md-flex {
+        display: flex !important; /* Убедимся, что десктопная навигация отображается */
     }
 }
+
 
 /* Очень маленькие мобильные устройства (до 480px, например, iPhone SE) */
 @media (max-width: 480px) {
     .top-header {
-        padding: 10px 10px; /* Еще более агрессивное уменьшение padding */
+        padding: 10px 10px;
     }
     .logo {
         font-size: 22px;
     }
-    nav a { /* Для десктопной навигации, если она вдруг показывается */
-        margin-left: 10px;
-        font-size: 12px;
-    }
-
     .section-title, .section-description {
-        margin: 15px 10px; /* Еще уменьшаем горизонтальные margin */
+        margin: 15px 10px;
         font-size: 16px;
     }
-
     .services-grid {
-        padding: 0 10px 20px; /* Еще уменьшаем горизонтальный padding */
+        padding: 0 10px 20px;
         gap: 15px;
     }
-
     .service-card {
-        height: 300px; /* Возможно, еще меньше для очень маленьких экранов */
+        height: 300px;
     }
-
     .service-card .overlay {
-        padding: 15px; /* Уменьшаем padding внутри оверлея */
+        padding: 15px;
     }
-
     .service-card h3 {
         font-size: 18px;
     }
-
     .service-card p {
         font-size: 14px;
     }
-
     .service-card button {
-        padding: 8px 0; /* Минимальный padding */
+        padding: 8px 0;
         font-size: 14px;
     }
 }
