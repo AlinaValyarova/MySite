@@ -3,65 +3,54 @@ body {
     font-family: Georgia, sans-serif;
     color: #786855;
     background-color: #fff;
-    overflow-x: hidden;
 }
 
-/* Header styles from Reviews page */
-header {
-    background-color: #fff; /* Ensure header background is white */
-    padding: 1rem 0; /* Bootstrap py-3 gives padding */
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Match the shadow */
+.top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
     font-size: 28px;
     font-weight: bold;
     color: #5ba377;
+    margin-right: auto;
     text-decoration: none;
 }
 
+nav {
+    display: flex;
+    margin-left: auto; 
+}
 nav a {
+    margin-left: 20px;
+    text-decoration: none;
     color: #666;
     font-size: 14px;
-    text-decoration: none;
-    transition: color 0.3s ease; /* Smooth transition for hover */
-}
-
-nav a:hover {
-    color: #5ba377; /* Hover color */
-}
-
-/* Specific styling for the mobile menu links if needed */
-#mobileMenu a {
-    padding: 0.5rem 0; /* Add some padding for better touch targets */
-}
-
-
-/* Main content styling (from your original code) */
-main {
-    padding: 40px 20px; /* Example padding for main content */
-    max-width: 1200px; /* Max width to center content */
-    margin: 0 auto; /* Center the main content */
 }
 
 .section-title {
-    text-align: left; /* From your original CSS */
+    text-align: left;
     color: #5ba377;
-    margin: 40px; /* From your original CSS */
-    font-size: 22px; /* From your original CSS */
+    margin: 40px;
+    font-size: 22px;
 }
 
 .section-description {
-    text-align: left; /* From your original CSS */
-    max-width: 2500px; /* From your original CSS */
-    margin: 20px 40px 40px; /* From your original CSS */
-    font-size: 20px; /* From your original CSS */
+    text-align: left;
+    max-width: 2500px;
+    margin: 20px 40px 40px;
+    font-size: 20px;
 }
 
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 500px);
+    grid-template-rows: repeat(2,500px);
     gap: 30px;
     padding: 0 40px 60px;
 }
@@ -73,12 +62,9 @@ main {
     height: 500px;
     color: white;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-items: flex-end;
     overflow: hidden;
     border-radius: 6px;
-    box-sizing: border-box;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box-shadow for consistency */
 }
 
 .service-card .overlay {
@@ -98,21 +84,17 @@ main {
     font-size: 20px;
     font-weight: lighter;
     margin-bottom: 15px;
-    word-break: break-word;
-    overflow-wrap: break-word;
 }
 
 .service-card button {
-    width: 100%;
-    padding: 15px 0;
+    padding: 30px 255px;
     background-color: transparent;
     border: 1px solid white;
     color: white;
     font-weight: lighter;
     transition: 0.3s;
     font-size: 20px;
-    box-sizing: border-box;
-    text-align: center;
+    white-space: nowrap;
 }
 
 .service-card button:hover {
@@ -120,122 +102,49 @@ main {
     color: #444;
 }
 
-/* Footer styles (added for completeness) */
-footer {
-    background-color: #fff;
-    color: #5ba377;
-}
 
-/* --- Медиа-запросы для мобильных устройств --- */
-
-/* Скрываем десктопную навигацию и показываем гамбургер на маленьких экранах */
-@media (max-width: 767.98px) {
-    .d-md-none {
-        display: block !important; /* Makes the hamburger button visible */
-    }
-    .d-md-flex {
-        display: none !important; /* Hides the desktop navigation */
-    }
-
-    .top-header { /* Revert to specific Bootstrap classes for header padding */
-        padding: 1rem 0; /* py-3 */
-    }
-    .container-fluid {
-        padding-right: 1.5rem; /* px-3 */
-        padding-left: 1.5rem;  /* px-3 */
-    }
-    .logo {
-        font-size: 24px;
-    }
-    .section-title, .section-description {
-        margin: 20px 15px;
-        font-size: 18px;
-    }
+@media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: 1fr;
-        padding: 0 15px 30px;
-        gap: 20px;
-    }
-    .service-card {
-        height: 350px;
-    }
-    .service-card p {
-        font-size: 16px;
-    }
-    .service-card button {
-        padding: 10px 0;
-        font-size: 16px;
-    }
-}
-
-/* Планшеты и широкие мобильные (от 768px до 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-    .d-md-none {
-        display: none !important;
-    }
-    .d-md-flex {
-        display: flex !important;
-    }
-
-    .services-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; /* всё ещё 2 колонки, но можно уменьшить отступы */
         grid-template-rows: auto;
         padding: 0 20px 40px;
         gap: 20px;
     }
+
     .service-card {
         height: 400px;
     }
+
     .service-card p {
         font-size: 18px;
     }
+
     .service-card button {
-        padding: 12px 0;
+        padding: 15px 80px;
         font-size: 18px;
     }
 }
 
-/* Десктоп (больше 1024px) */
-@media (min-width: 1025px) {
-    .d-md-none {
-        display: none !important; /* Убедимся, что кнопка гамбургера скрыта */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
     }
-    .d-md-flex {
-        display: flex !important; /* Убедимся, что десктопная навигация отображается */
-    }
-}
 
+    .service-card {
+        height: 350px;
+    }
 
-/* Очень маленькие мобильные устройства (до 480px, например, iPhone SE) */
-@media (max-width: 480px) {
-    .top-header {
-        padding: 10px 10px;
-    }
-    .logo {
-        font-size: 22px;
-    }
-    .section-title, .section-description {
-        margin: 15px 10px;
+    .service-card p {
         font-size: 16px;
     }
-    .services-grid {
-        padding: 0 10px 20px;
-        gap: 15px;
-    }
-    .service-card {
-        height: 300px;
-    }
-    .service-card .overlay {
-        padding: 15px;
-    }
-    .service-card h3 {
-        font-size: 18px;
-    }
-    .service-card p {
-        font-size: 14px;
-    }
+
     .service-card button {
-        padding: 8px 0;
-        font-size: 14px;
+        padding: 12px 60px;
+        font-size: 16px;
+    }
+
+    .section-title, .section-description {
+        margin: 20px;
+        font-size: 18px;
     }
 }
