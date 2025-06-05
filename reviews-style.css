@@ -5,6 +5,19 @@ body {
     color: #786855;
 }
 
+header.py-3.shadow-sm {
+    border-bottom: 1px solid #ccc !important;
+}
+
+.top-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .logo {
     font-size: 28px;
     font-weight: bold;
@@ -21,21 +34,22 @@ nav a:hover {
     color: #5ba377;
 }
 
+/* --- Reviews Page Content --- */
 .reviews-page-content {
-    background-color: #fff; /* Убедимся, что фон белый для этой страницы */
+    background-color: #fff; /* Ensure white background for this page */
 }
 
 .reviews-heading {
     text-align: center;
-    font-size: 2.5em; /* Достаточно большой заголовок */
+    font-size: 2.5em; /* Large heading */
     margin-bottom: 20px;
-    color: #5ba377; /* Цвет, как на скриншоте */
+    color: #5ba377; /* Color as per screenshot */
 }
 
 .reviews-description {
     text-align: center;
-    max-width: 800px; /* Ограничим ширину для лучшей читаемости */
-    margin: 0 auto 50px auto; /* Центрируем и добавляем отступ снизу */
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto 50px auto; /* Center and add bottom margin */
     font-size: 1.1em;
     line-height: 1.6;
     color: #786855;
@@ -43,10 +57,10 @@ nav a:hover {
 
 .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Три колонки */
-    gap: 30px; /* Отступ между карточками */
-    padding: 0 15px; /* Небольшой горизонтальный отступ */
-    margin-bottom: 50px; /* Отступ до кнопки */
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 30px; /* Gap between cards */
+    padding: 0 15px; /* Small horizontal padding */
+    margin-bottom: 50px; /* Margin before the button */
 }
 
 .review-card {
@@ -57,9 +71,9 @@ nav a:hover {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Center content horizontally */
     text-align: center;
-    min-height: 450px; /* Минимальная высота для выравнивания карточек, можно скорректировать */
+    min-height: 450px; /* Minimum height to align cards, adjustable */
 }
 
 .review-card .review-text {
@@ -67,9 +81,9 @@ nav a:hover {
     font-size: 1.1em;
     margin-bottom: 20px;
     color: #786855;
-    flex-grow: 1; /* Позволяет тексту занимать доступное пространство */
+    flex-grow: 1; /* Allow text to take available space */
     display: flex;
-    align-items: center; /* Центрируем текст по вертикали внутри отведенного места */
+    align-items: center; /* Vertically center text within its allocated space */
     justify-content: center;
 }
 
@@ -78,33 +92,33 @@ nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 270px; /* ИЗМЕНЕНО: Увеличена высота для более "длинных" картинок */
+    height: 270px; /* INCREASED: Increased height for "longer" images */
     margin-top: 15px;
     overflow: hidden;
     border-radius: 4px;
 }
 
 .review-card .review-image {
-    width: 100%; /* Изображение заполняет всю ширину контейнера */
-    height: 100%; /* Изображение заполняет всю высоту контейнера */
-    object-fit: cover; /* Обрезает изображение, чтобы оно заполняло контейнер, сохраняя пропорции */
-    display: block; /* Убирает лишние отступы под изображением */
+    width: 100%; /* Image fills container width */
+    height: 100%; /* Image fills container height */
+    object-fit: cover; /* Crop image to fill container, preserving aspect ratio */
+    display: block; /* Remove extra space below image */
 }
 
-/* Order Now Button Section */
+/* --- Order Now Button Section --- */
 .order-section {
-    padding-bottom: 80px; /* Отступ снизу */
+    padding-bottom: 80px; /* Bottom padding */
 }
 
 .order-now-button {
-    padding: 20px 80px; /* Увеличим отступы для кнопки */
+    padding: 20px 80px; /* Increase padding for button */
     border: 1px solid #786855;
     background: none;
     font-size: 20px;
     cursor: pointer;
     transition: 0.3s;
     color: #786855;
-    text-transform: uppercase; /* Текст в верхнем регистре */
+    text-transform: uppercase; /* Uppercase text */
     font-weight: bold;
 }
 
@@ -114,12 +128,11 @@ nav a:hover {
     border-color: #659D77;
 }
 
-
-/* Мобильные телефоны (до 768px) */
+/* --- Mobile Devices (up to 768px) --- */
 @media (max-width: 768px) {
     .reviews-grid {
-        grid-template-columns: 1fr; /* 1 колонка */
-        padding: 0 20px; /* Увеличиваем отступы по бокам */
+        grid-template-columns: 1fr; /* 1 column */
+        padding: 0 20px; /* Increase side padding */
     }
     .reviews-description {
         margin: 0 auto 30px auto;
@@ -129,7 +142,7 @@ nav a:hover {
         font-size: 2em;
     }
     .review-card {
-        min-height: auto; /* Высота авто, чтобы содержимое определяло ее */
+        min-height: auto; /* Auto height so content determines it */
         padding: 15px;
     }
     .review-card .review-image-wrapper {
